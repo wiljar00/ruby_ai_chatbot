@@ -4,8 +4,7 @@ require 'json'
 class ChatBot 
   
   def  initialize
-    # TODO: create a .env file and store the OPENAI_API_KEY in it
-    @openai_api_key = 'your_openai_api_key_here'
+    @openai_api_key = ENV['OPENAI_API_KEY']
     @chat_model = 'gpt-4' # or 'gpt-3.5-turbo'
   end
 
