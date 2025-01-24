@@ -9,7 +9,17 @@ Currently there are two ways to run the chatbot:
 
 ## Usage
 
-Add your OpenAI API key to the .env file.
+Clone the repository and run the following commands:
+
+```bash
+cp .env.example .env
+```
+
+This will create a .env file in the root directory.
+
+Update the .env file with your OpenAI API key.
+
+Run the following command to start either the chatbot console or server:
 
 ### Console
 
