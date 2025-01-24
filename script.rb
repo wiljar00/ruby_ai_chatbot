@@ -49,3 +49,5 @@ class ChatBot
   end
 end
 
+chatbot = ChatBot.new
+chatbot.run_chatbot
