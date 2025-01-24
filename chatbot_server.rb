@@ -1,6 +1,7 @@
 require 'sinatra'
 require 'http'
 require 'json'
+require 'dotenv/load'
 
 class ChatBotServer
   def initialize
