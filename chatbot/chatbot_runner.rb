@@ -37,14 +37,14 @@ class ChatbotRunner
 
   def switch_to_console_mode
     puts "Welcome to the chatbot console! Please enter your question or type 'exit' to leave."
+    ::ChatbotConsole.new.run_chatbot
   end
 
   def switch_to_server_mode
     puts "Welcome to the chatbot server! Please enter your question or type 'exit' to leave."
+    ::ChatbotServer.new.run_chatbot
   end
 end
-
-
 
 runner = ChatbotRunner.new  
 runner.run

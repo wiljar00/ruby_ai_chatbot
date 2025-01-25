@@ -3,11 +3,11 @@ require 'http'
 require 'json'
 require 'dotenv/load'
 
-class ChatbotServer
-  def initialize
-    @openai_api_key = ENV['OPENAI_API_KEY']
+module Chatbot
+  class ChatbotServer
+    def initialize
+      @openai_api_key = ENV['OPENAI_API_KEY']
     @chat_model = 'gpt-4'
-  end
 
   def chat_with_openai(prompt)
     url = 'https://api.openai.com/v1/chat/completions'
@@ -35,6 +35,7 @@ class ChatbotServer
       { reply: chat_with_openai(prompt) }.to_json
     end
   end
+end
 end
 
 chatbot_server = ChatbotServer.new
