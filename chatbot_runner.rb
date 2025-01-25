@@ -1,6 +1,7 @@
 # script to run the chatbot according to the user's input
 
 require_relative 'chatbot/chatbot_console'
+require_relative 'chatbot/chatbot_server'
 
 class ChatbotRunner
   def run 
@@ -20,14 +21,15 @@ class ChatbotRunner
 
   # introduction to the app:
   def print_introduction
-    puts "Welcome to the chatbot! I'm here to help you with your questions."
+    puts "\nWelcome to the chatbot! I'm here to help you with your questions."
     puts "If you would like to run the chatbot in console mode, please type 'console'."
     puts "If you would like to run the chatbot in server mode, please type 'server'."
-    puts "Please enter 'exit' at any time to leave."
+    puts "Please enter 'exit' at any time to leave.\n"
   end
 
   # get the user's input
   def get_user_input
+    print "> "
     gets.chomp
   end
 
@@ -37,13 +39,13 @@ class ChatbotRunner
   end
 
   def switch_to_console_mode
-    puts "Welcome to the chatbot console! Please enter your question or type 'exit' to leave."
+    puts "\nWelcome to the chatbot console! Please enter your question or type 'exit' to leave.\n"
     Chatbot::ChatbotConsole.new.run_chatbot
   end
 
   def switch_to_server_mode
-    puts "Welcome to the chatbot server! Please enter your question or type 'exit' to leave."
-    Chatbot::ChatbotServer.new.run_chatbot
+    puts "\nWelcome to the chatbot server! Please enter your question or type 'exit' to leave.\n"
+    Chatbot::ChatbotServer.run_server
   end
 end
 

@@ -7,3 +7,5 @@ gem 'sinatra'
 gem 'http'
 gem 'json'
 gem 'dotenv'
+gem "rackup", "~> 2.2"
+gem "puma", "~> 6.5"
