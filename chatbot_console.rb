@@ -2,7 +2,7 @@ require 'http'
 require 'json'
 require 'dotenv/load'
 
-class ChatBot 
+class ChatbotConsole
   
   def  initialize
     @openai_api_key = ENV['OPENAI_API_KEY']
@@ -49,5 +49,5 @@ class ChatBot
   end
 end
 
-chatbot = ChatBot.new
+chatbot = ChatbotConsole.new
 chatbot.run_chatbot
