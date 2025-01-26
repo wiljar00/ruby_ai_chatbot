@@ -1,4 +1,4 @@
-# Ruby Chatbot
+# Ruby AI Chatbot
 
 A simple chatbot implementation in Ruby that can run in both console and server modes, powered by OpenAI's GPT models.
 
