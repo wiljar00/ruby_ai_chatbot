@@ -50,6 +50,7 @@ GEM
       rack-protection (= 4.1.1)
       rack-session (>= 2.0.0, < 3)
       tilt (~> 2.0)
+    sinatra-cors (1.2.0)
     tilt (2.6.0)
 
 PLATFORMS
@@ -63,6 +64,7 @@ DEPENDENCIES
   puma (~> 6.5)
   rackup (~> 2.2)
   sinatra
+  sinatra-cors
 
 BUNDLED WITH
    2.5.11

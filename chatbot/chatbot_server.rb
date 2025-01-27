@@ -36,6 +36,21 @@ module Chatbot
     configure do
       set :port, 4567
       set :bind, '0.0.0.0'
+      
+      # Enable CORS
+      enable :cross_origin
+    end
+
+    # CORS preflight
+    options "*" do
+      response.headers["Allow"] = "GET, POST, OPTIONS"
+      response.headers["Access-Control-Allow-Headers"] = "Authorization, Content-Type, Accept, X-User-Email, X-Auth-Token"
+      response.headers["Access-Control-Allow-Origin"] = "*"
+      200
+    end
+
+    before do
+      response.headers['Access-Control-Allow-Origin'] = '*'
     end
 
     # Define routes
