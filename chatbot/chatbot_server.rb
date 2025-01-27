@@ -34,7 +34,7 @@ module Chatbot
 
     # Configure server settings
     configure do
-      port = ENV['SINATRA_PORT'] || 4567
+      port = ENV['PORT'] || 4567  # Use PORT from .env or default to 4567
       set :port, port
       set :bind, '0.0.0.0'
       

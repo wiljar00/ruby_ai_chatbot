@@ -95,6 +95,35 @@ curl -X POST http://localhost:4567/chat \
   -d '{"prompt":"Hello, how are you?"}'
 ```
 
+### Web Interface Example
+
+A simple web interface (`chat.html`) is provided to demonstrate how to interact with the chatbot server:
+
+1. Start the chatbot server:
+
+```bash
+ruby chatbot_runner.rb
+# Type 'server' when prompted
+```
+
+2. Open `chat.html` in your web browser
+   - A modern, dark-themed chat interface will appear
+   - Type messages in the input box at the bottom
+   - Press Enter or click the arrow to send
+   - Messages will appear in chat bubbles
+   - Use Shift+Enter for multi-line messages
+
+The web interface demonstrates:
+
+- How to make API calls to the chatbot server
+- Basic chat UI implementation
+- Handling server responses
+- Error handling for failed requests
+
+You can use this as a starting point for building your own chat interface or integrate the API into your existing applications.
+
+![Chatbot Web Interface](screenshot.png)
+
 ## API Endpoints
 
 - `GET /` - Check if server is running
