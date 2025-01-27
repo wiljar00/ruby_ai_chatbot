@@ -34,7 +34,8 @@ module Chatbot
 
     # Configure server settings
     configure do
-      set :port, 4567
+      port = ENV['SINATRA_PORT'] || 4567
+      set :port, port
       set :bind, '0.0.0.0'
       
       # Enable CORS
@@ -67,7 +68,18 @@ module Chatbot
 
     # Class method to start the server
     def self.run_server
-      run!
+      begin
+        run!
+      rescue Errno::EADDRINUSE
+        puts "\nError: Port 4567 is already in use."
+        puts "Please either:"
+        puts "1. Stop the other server running on port 4567"
+        puts "2. Or use a different port by setting SINATRA_PORT environment variable"
+        puts "\nTo find and stop the existing server:"
+        puts "lsof -i :4567     # Find the process"
+        puts "kill -9 <PID>     # Stop it using the process ID\n"
+        exit(1)
+      end
     end
   end
 end
